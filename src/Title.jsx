@@ -5,7 +5,7 @@ const Title =() => {
   return(
     <div>
       <h1>Welcome to Siddhartha!</h1>
-      <p>[Press any key to continue]</p>
+      <p style={{ cursor: 'pointer' }} classname="not-story">[Click here to continue]</p>
     </div>
   )
 }
