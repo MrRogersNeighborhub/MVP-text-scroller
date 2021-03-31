@@ -4,5 +4,5 @@
 ## NPM ##
 node_modules
 
-## Compiled / Bundled Files ##
-client/dist/bundle.js
+## Components ##
+src/pages
