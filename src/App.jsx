@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Title from './pages/Title.jsx';
+import Title from './Title.jsx';
 // import StoryTree from './story/storyTree.js';
 
 const App = (props) => {
@@ -98,11 +98,11 @@ const App = (props) => {
       text: 'Following Gotama',
       choices: [
         {
-          text: 'Seek answers threw meditation',
+          text: 'Seek answers through meditation',
           next: 9,
         },
         {
-          text: 'Tell Govinda that you still yern for something more.',
+          text: 'Tell Govinda that you still yearn for something more.',
           next: 10,
         }
       ]
@@ -113,6 +113,9 @@ const App = (props) => {
         {
           text: 'Tell Govinda that you still yern for something more.',
           next: 10,
+        },
+        {
+          text: null
         }
       ]
     },
