@@ -1,5 +1,4 @@
 body {
-  color: lime;
   background-color: black;
 }
 
@@ -11,12 +10,12 @@ body {
 }
 
 button {
-  color: lime;
+  position: absolute;
+  top: 2%;
+  right: 20%;
   background-color: black;
   border: none;
   outline: none;
-  width: 90%;
-  margin-top: 5px;
   text-align: right;
 }
 
