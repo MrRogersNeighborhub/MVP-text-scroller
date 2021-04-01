@@ -366,12 +366,12 @@ const App = (props) => {
       text: 'You are now an old man who sees that all forms of life are interconnected in a cycle without beginning or end. Life and death, joy and sorrow, good and evil are all parts of the whole and are necessary to understand the meaning of life. One day, Govinda returns. He tells you that he heard there is a man that lives by the river that has reached enlightenment.',
       choices: [
         {
-          text: 'Tell him that there is no one person that can tell him the secret to enlightenment. Then, ask him to kiss your forehead.',
-          next: 'final-ending',
-        },
-        {
           text: 'Tell him the secret to enlightenment.',
           next: 'prompt',
+        },
+        {
+          text: 'Tell him that there is no one person that can tell him the secret to enlightenment. Then, ask him to kiss your forehead.',
+          next: 'final-ending',
         }
       ]
     },
@@ -392,8 +392,21 @@ const App = (props) => {
       text: null,
       choices: [
         {
-          next: null
+          next: 'thanks'
         }, { text: null }
+      ]
+    },
+    'thanks': {
+      text: 'Thank you',
+      choices: [
+        {
+          text: 'GAME OVER',
+          next: null,
+        },
+        {
+          text: '[Restart]',
+          next: 'title',
+        }
       ]
     }
   }
@@ -419,7 +432,14 @@ const App = (props) => {
       <div
         className="story"
         style={{color: color}}>
-          { currentPage === 'prompt' ? <div>testing</div> : null }
+          { currentPage === 'prompt' ?
+          <form onSubmit={ handleChangePage(story[currentPage].choices[0].next) }>
+            <label>
+              The secret to enlightenment is <input type="text" />
+            </label>
+             <input type="submit" value="Submit" />
+          </form> :
+          null }
             { currentPage === 'title' ?
               <h1 style={{ cursor: 'default' }}>{ story[currentPage].text }</h1> :
               <h3 style={{ cursor: 'default' }}>{ story[currentPage].text }</h3>
